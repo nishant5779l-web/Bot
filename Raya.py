@@ -1,3 +1,13 @@
+for attempt in range(3):
+    try:
+        bot.delete_webhook(drop_pending_updates=True)
+        print("🧹 Webhook cleared successfully", flush=True)
+        break
+    except Exception as e:
+        print(f"⚠️ Webhook clear attempt {attempt+1} failed: {e}", flush=True)
+        time.sleep(2)
+
+
 # ═══════════════════════════════════════════════════════════
 # TOKENS & KEYS - REFACTORED FOR RIYA X CPM1 BOT
 # ═══════════════════════════════════════════════════════════
